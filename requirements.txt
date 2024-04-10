@@ -3,3 +3,4 @@ python-dotenv
 openai
 jokeapi
 requests
+flask
