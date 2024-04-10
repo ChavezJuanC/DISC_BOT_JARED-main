@@ -354,7 +354,7 @@ async def lastmatch(ctx, player_name):
 async def send_live_message():
     channel = bot.get_channel(1226903209109491802)
     if channel:
-        message = f"{datetime.datetime.now()} - Status - ACTIVE"
+        message = f"{datetime.datetime.now()} - Status - is_ACTIVE"
         await channel.send(message)
 
 
