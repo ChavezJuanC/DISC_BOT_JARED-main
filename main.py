@@ -352,7 +352,7 @@ async def lastmatch(ctx, player_name):
 
 @tasks.loop(minutes=5)  # Run the task every 30 minutes
 async def send_live_message():
-    channel = bot.get_channel(1227525223977582602)
+    channel = bot.get_channel(1226903209109491802)
     if channel:
         await channel.send("BOT IS LIVE")
 
