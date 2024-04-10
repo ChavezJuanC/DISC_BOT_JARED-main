@@ -1,14 +1,18 @@
-# Import Flask
 from flask import Flask
+from threading import Thread
 
-# Create an instance of Flask
-app = Flask(__name__)
+app = Flask('')
 
-# Define a route for the home page
 @app.route('/')
 def home():
-    return "Server is running"
+    return "I'm alive!"
 
-# Run the Flask application
-if __name__ == '__main__':
-    app.run(debug=True)
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    server = Thread(target=run)
+    server.start()
+
+if __name__ == "__main__":
+    keep_alive()
