@@ -35,6 +35,8 @@ async def on_ready():
         # Print status message when the bot is ready
         print("Starting {} BOT at {}".format(bot.user, datetime.datetime.now()))
         print("Bot command tree synced")
+        send_live_message.start()
+        
     except Exception as e:
         # Print error if there's an issue loading the bot
         print("Error Loading bot", e)
