@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 import os
 from dotenv import load_dotenv
 import datetime
@@ -342,6 +342,15 @@ async def lastmatch(ctx, player_name):
     except Exception as e:
         print("Error while fetching match data:", e)
         await ctx.send("An error occurred while fetching match data.")
+
+
+##BOT STATUS##
+
+@tasks.loop(minutes=30)  # Run the task every 30 minutes
+async def send_live_message():
+    channel = bot.get_channel(1227525223977582602)
+    if channel:
+        await channel.send("BOT IS LIVE")
 
 
 # Run the bot with the provided Discord API key
