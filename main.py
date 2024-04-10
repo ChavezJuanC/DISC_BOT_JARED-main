@@ -7,9 +7,11 @@ from openai import OpenAI
 from jokeapi import Jokes
 import requests
 from heros import dota_heroes  # Importing dota_heroes from a custom module
-
+from keep_alive import keep_alive
 """Basic Bot config"""
 
+#keep server up#
+keep_alive()
 # Load .env file
 load_dotenv()
 
