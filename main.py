@@ -350,11 +350,12 @@ async def lastmatch(ctx, player_name):
 
 ##BOT STATUS##
 
-@tasks.loop(minutes=5)  # Run the task every 30 minutes
+@tasks.loop(minutes=3)  # Run the task every 30 minutes
 async def send_live_message():
     channel = bot.get_channel(1226903209109491802)
     if channel:
-        await channel.send("BOT IS LIVE")
+        message = f"{datetime.datetime.now()} - Status - ACTIVE"
+        await channel.send(message)
 
 
 # Run the bot with the provided Discord API key
